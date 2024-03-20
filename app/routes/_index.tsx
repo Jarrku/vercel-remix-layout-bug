@@ -1,10 +1,8 @@
+import { Link } from "@remix-run/react";
 import type { MetaFunction } from "@vercel/remix";
 
 export const meta: MetaFunction = () => {
-  return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
+  return [{ title: "New Remix App" }, { name: "description", content: "Welcome to Remix!" }];
 };
 
 export default function Index() {
@@ -13,27 +11,10 @@ export default function Index() {
       <h1>Welcome to Remix</h1>
       <ul>
         <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
+          <Link to="/123/subpath">/123/subpath (NOT nested in subpath_ layout)</Link>
         </li>
         <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
+          <Link to="/123/subpath/hello">/123/subpath/hello (nested in subpath_ layout)</Link>
         </li>
       </ul>
     </div>
